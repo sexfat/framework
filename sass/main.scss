@@ -1,0 +1,73 @@
+// reset setting
+@import "base/reset";
+// plugin setting
+// @import "vender/bootstrap-sass/bootstrap";
+
+// vender setting
+
+@import "reference/styles";
+@import "reference/plugins";
+@import "reference/themes/lyt2-theme-1";
+//
+@import "base/setting";
+@import "base/font_family";
+@import "base/font";
+@import "mixin/mixins";
+@import "base/common";
+
+
+
+
+// libary setting
+// @import "libs/animate-sass/animate";
+// @ims
+// @import "libs/hover/scss/hover";
+// @import "libs/owl.carousel/src/scss/owl.carousel";
+// @import "libs/owl.carousel/src/scss/owl.theme.default";
+@import "base/plugin";
+
+//修改
+
+
+
+//設定
+
+
+//pages
+@import "respond/custom";
+@import "layout/nav/custom";
+@import "layout/tab/custom";
+@import "layout/lotteryCar/custom";
+@import "layout/money/custom";
+@import "other/time_style";
+@import "compinents/main_time";
+//桌機
+@include grid-media($custom-grid) {
+    @import "respond/desktop"; 
+    @import "layout/nav/desktop";
+    @import "layout/tab/desktop";
+    @import "layout/lotteryCar/desktop";
+    @import "layout/money/desktop";
+}
+//平板
+@include grid-media($medium-custom-grid) {
+    @import "respond/medium";
+    @import "layout/nav/medium";
+    @import "layout/tab/medium";
+    @import "layout/lotteryCar/medium";
+    @import "layout/money/medium";
+}
+//手機
+@include grid-media($small-custom-grid) {
+    @import 'respond/small';
+    @import 'layout/nav/small';
+    @import 'layout/tab/small';
+    @import 'layout/lotteryCar/small';
+    @import 'layout/money/small';
+    
+}
+
+
+@include margin(top,100);
+@include margin(left,200);
+@include margin(right,100);
