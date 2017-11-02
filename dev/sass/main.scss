@@ -18,6 +18,8 @@
 
 
 
+
+
 // libary setting
 // @import "libs/animate-sass/animate";
 // @ims
@@ -50,7 +52,9 @@
 @include margin(top,100);
 @include margin(left,200);
 @include margin(right,100);
-
+.box {
+    width: 20px;
+}
 
 
 

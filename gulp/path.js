@@ -1,4 +1,4 @@
-module.exports = function () {
+
     var web = {
         sass: [
             'dev/sass/*.scss',
@@ -24,4 +24,3 @@ module.exports = function () {
         ],
         tmp: 'resources/assets/tmp/css/*.css'
     };
-}
