@@ -3,28 +3,28 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     reload = browserSync.reload;
 
-
-// var fnc = 'html'; // html or pug  
-
-
-
-
 //html style
 require('../scripts/html_template.js');
 require('../scripts/html_pug.js');
 require('../scripts/jshint.js');
+require('../scripts/style.js');
+
+
+
 
 var web = {
     sass: [
-        'sass/*.scss',
-        'sass/**/*.scss',
-        'sass/**/**/*.scss'
+        'dev/sass/*.scss',
+        'dev/sass/**/*.scss',
+        'dev/sass/**/**/*.scss'
     ],
     css: [
-        './dest/css/*.css',
-        './dest/css/**/*.css'
+        './assets/css/*.css',
+        './assets/css/**/*.css'
     ]
 };
+
+
 // 用 module 的概念傳遞值
 module.exports = function (fnc) {
 
@@ -32,21 +32,21 @@ module.exports = function (fnc) {
     gulp.task('static', ['styles'], function () {
         browserSync.init({
             server: {
-                baseDir: "dest",
-                index: "main_v.html"
+                baseDir: "./",
+                index: "index.html"
             }
         });
         gulp.watch(web.sass, ['styles']).on('change', reload); //watch  sass
-        gulp.watch('./dest/*.html').on('change', reload); //watch  sass
+        gulp.watch('./*.html').on('change', reload); // 
         if (fnc == 'html') {
-            gulp.watch(['./app/html/*.html', './app/html/**/*.html'], ['fileinclude']).on('change', reload); //watch  sass
+            gulp.watch(['./dev/app/html/*.html', './dev/app/html/**/*.html'], ['fileinclude']).on('change', reload); //watch  sass
         } else if (fnc == 'pug') {
-            gulp.watch(['./app/pug/*.pug', './app/pug/**/*.pug'], ['compilePug']).on('change', reload); //watch  sass     
+            gulp.watch(['./dev/app/pug/*.pug', './dev/app/pug/**/*.pug'], ['compilePug']).on('change', reload); //watch  sass     
         } else if (fnc == 'all') {
-            gulp.watch(['./app/pug/*.pug', './app/pug/**/*.pug'], ['compilePug']).on('change', reload); //watch  sass
-            gulp.watch(['./app/html/*.html', './app/html/**/*.html'], ['fileinclude']).on('change', reload); //watch  sasss
+            gulp.watch(['./dev/app/pug/*.pug', './dev/app/pug/**/*.pug'], ['compilePug']).on('change', reload); //watch  sass
+            gulp.watch(['./dev/app/html/*.html', './dev/app/html/**/*.html'], ['fileinclude']).on('change', reload); //watch  sasss
         }
-        gulp.watch('./dest/css/*.css', ['css']).on('change', reload); //watch  autofixer
-        gulp.watch('./dest/js/*.js', ['lint']).on('change', reload); //watch  autofixer
+        // gulp.watch('assets/css/*.css', ['css']).on('change', reload); //watch  autofixser
+        gulp.watch('assets/js/*.js', ['lint']).on('change', reload); //watch  js lint
     });
 }

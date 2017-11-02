@@ -4,9 +4,9 @@ var gulp = require('gulp'),
 // 路徑
 var path = {
     pug: [
-        './app/pug/*.pug'
+        './dev/app/pug/*.pug'
     ],
-    html: './app/html/comp/'
+    html: './pug'
 };
 
 
