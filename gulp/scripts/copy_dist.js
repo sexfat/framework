@@ -3,6 +3,7 @@
 //==========================
 
 var gulp = require('gulp'),
+    gulpHtmlVersion = require('gulp-html-version'); //增加版本號
     cssmin = require('gulp-cssmin');
     // urlAdjuster = require('gulp-css-url-adjusters'); // 更換 css 檔案路徑
 
@@ -33,6 +34,12 @@ gulp.task('dist' , ['clean'] ,function () {
     return gulp.src('*.html', {
             base: './'
         })
+        //增加版本好
+        .pipe(gulpHtmlVersion({
+            paramName: 'version',
+            paramType: 'timestamp',
+            suffix: ['css', 'js', 'jpg']
+        }))
         .pipe(gulp.dest('./dist'))
 
         //css

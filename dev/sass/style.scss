@@ -14,3 +14,8 @@
 @import "base/font";
 @import "mixin/mixins";
 @import "base/common";
+
+
+@include margin(top,100);
+@include margin(left,200);
+@include margin(right,100);

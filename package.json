@@ -28,6 +28,7 @@
     "gulp-git": "^2.2.0",
     "gulp-html-extend": "^1.1.6",
     "gulp-html-replace": "^1.6.2",
+    "gulp-html-version": "^1.0.1",
     "gulp-iconfont": "^8.0.1",
     "gulp-iconfont-css": "^2.1.0",
     "gulp-jshint": "^2.0.4",
