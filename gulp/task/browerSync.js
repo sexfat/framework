@@ -29,7 +29,7 @@ var web = {
 module.exports = function (fnc) {
 
     //broswerSync static
-    gulp.task('static', ['styles'], function () {
+    gulp.task('static', ['styles', 'fileinclude'], function () {
         browserSync.init({
             server: {
                 baseDir: "./dest",
