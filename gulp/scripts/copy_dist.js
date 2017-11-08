@@ -17,6 +17,7 @@ var web = {
     assets: [
         'assets/fonts/*',
         'assets/images/*',
+        'assets/js/*'
     ],
     libs: []
 };
