@@ -46,3 +46,4 @@ compress
 dest/css
 dest/css/autoprefixer
 .map
+dist
