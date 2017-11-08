@@ -29,10 +29,10 @@ var web = {
                 broswer: ['last 1 vrsion']
             })
         ];
-        return gulp.src('./assets/css/*.css')
+        return gulp.src('./dest/assets/css/*.css')
             .pipe(gulpPlumber())
             .pipe(postcss(plugins))
-            .pipe(gulp.dest('./assets/css/autoprefixer/'));
+            .pipe(gulp.dest('./dest/assets/css/autoprefixer/'));
     });
 
     //  sass
@@ -45,6 +45,6 @@ var web = {
                 outputStyle: 'expanded' // compact , expanded, nested
             }))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest('./assets/css/')) //指定編譯後的路徑
+            .pipe(gulp.dest('./dest/assets/css/')) //指定編譯後的路徑
     });
 

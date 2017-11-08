@@ -6,5 +6,5 @@ gulp.task('lint', function () {
     return gulp.src('./dev/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
-        .pipe(gulp.dest('./assets/js/'));
+        .pipe(gulp.dest('./dest/assets/js/'));
 });

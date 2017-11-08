@@ -33,7 +33,7 @@ gulp.task('dist' , ['clean'] ,function () {
 
     //html
     return gulp.src('*.html', {
-            base: './'
+            base: './dest'
         })
         //增加版本好
         .pipe(gulpHtmlVersion({
@@ -46,7 +46,7 @@ gulp.task('dist' , ['clean'] ,function () {
         //css
         &&
         gulp.src('assets/css/*', {
-            base: './'
+            base: './dest'
         })
         // .pipe(urlAdjuster({
         //     replace: ['./assets/images/', './assets/images/']
@@ -59,13 +59,13 @@ gulp.task('dist' , ['clean'] ,function () {
         // all files
         &&
         gulp.src(web.assets, {
-            base: './'
+            base: './dest'
         })
         .pipe(gulp.dest('./dist/'))
         //js       
         &&
         gulp.src('assets/js', {
-            base: './'
+            base: './dest'
         })
         .pipe(gulp.dest('./dist/'))
 });

@@ -19,8 +19,8 @@ var web = {
         'dev/sass/**/**/*.scss'
     ],
     css: [
-        './assets/css/*.css',
-        './assets/css/**/*.css'
+        './dest/assets/css/*.css',
+        './dest/assets/css/**/*.css'
     ]
 };
 
@@ -32,12 +32,12 @@ module.exports = function (fnc) {
     gulp.task('static', ['styles'], function () {
         browserSync.init({
             server: {
-                baseDir: "./",
+                baseDir: "./dest",
                 index: "index.html"
             }
         });
         gulp.watch(web.sass, ['styles']).on('change', reload); //watch  sass
-        gulp.watch('./*.html').on('change', reload); // 
+        gulp.watch('./dest/*.html').on('change', reload); // 
         if (fnc == 'html') {
             gulp.watch(['./dev/app/html/*.html', './dev/app/html/**/*.html'], ['fileinclude']).on('change', reload); //watch  sass
         } else if (fnc == 'pug') {

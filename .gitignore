@@ -43,6 +43,7 @@ bower_components
 .zip
 libs
 compress
-dest/css
-dest/css/autoprefixer
+dest/assets/css
+dest/aseets/css/autoprefixer
 .map
+dist/
