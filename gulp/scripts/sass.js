@@ -10,5 +10,5 @@ gulp.task('styles', function () {
             outputStyle: 'expanded' // compact , expanded, nested
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('css')) //指定編譯後的路徑
+        .pipe(gulp.dest('./dest/assets/css')) //指定編譯後的路徑
 });
